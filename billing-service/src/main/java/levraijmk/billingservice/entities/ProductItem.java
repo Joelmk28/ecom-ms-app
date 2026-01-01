@@ -1,6 +1,7 @@
 package levraijmk.billingservice.entities;
 
 import jakarta.persistence.*;
+import levraijmk.billingservice.entities.model.Product;
 import lombok.*;
 
 @Entity
@@ -18,4 +19,6 @@ public class ProductItem {
     private double price;
     @ManyToOne
     private Bill bill;
+    @Transient
+    private Product product;
 }

@@ -1,9 +1,7 @@
 package levraijmk.billingservice.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import levraijmk.billingservice.entities.model.Customer;
 import lombok.*;
 
 import java.util.Date;
@@ -22,4 +20,6 @@ public class Bill {
     private long customerId;
     @OneToMany(mappedBy = "bill")
     private List<ProductItem> productItems;
+@Transient
+    private Customer customer;
 }
